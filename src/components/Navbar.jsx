@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-import { FiMenu, FiX, FiInstagram, FiFacebook } from 'react-icons/fi';
-import logo from '../assets/logo.png';
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
+import { FiMenu, FiX, FiInstagram, FiFacebook } from "react-icons/fi";
+import logo from "../assets/logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,27 +13,35 @@ const Navbar = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'Services', path: '/services' },
-    { name: 'Contact', path: '/contact' },
+    { name: "Home", path: "/" },
+    { name: "Services", path: "/services" },
+    { name: "Contact", path: "/contact" },
   ];
 
   return (
-    <nav 
+    <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white/90 backdrop-blur-md py-3 shadow-sm' : 'bg-transparent py-5'
+        scrolled
+          ? "bg-white/90 backdrop-blur-md py-3 shadow-sm"
+          : "bg-transparent py-5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center space-x-3">
-            <img src={logo} alt="StylesByRyan Logo" className="h-10 w-10 object-contain rounded" />
-            <span className={`text-2xl font-bold logo-font ${scrolled ? 'text-primary' : 'text-gray-500'}`}>
+            <img
+              src={logo}
+              alt="StylesByRyan Logo"
+              className="h-10 w-10 object-contain rounded"
+            />
+            <span
+              className={`text-2xl font-bold logo-font ${scrolled ? "text-primary" : "text-gray-500"}`}
+            >
               StylesByRyan
             </span>
           </Link>
@@ -45,7 +53,9 @@ const Navbar = () => {
                 key={link.name}
                 to={link.path}
                 className={`text-sm font-medium tracking-wide uppercase transition-colors hover:text-accent ${
-                  location.pathname === link.path ? 'text-accent' : 'text-primary'
+                  location.pathname === link.path
+                    ? "text-accent"
+                    : "text-primary"
                 }`}
               >
                 {link.name}
@@ -76,7 +86,7 @@ const Navbar = () => {
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
+            animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-white border-b overflow-hidden"
           >
@@ -92,10 +102,20 @@ const Navbar = () => {
                 </Link>
               ))}
               <div className="pt-4 flex justify-around">
-                <a href="https://www.instagram.com/_styledbyryan" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-accent transition-colors">
+                <a
+                  href="https://www.instagram.com/_styledbyryan"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-600 hover:text-accent transition-colors"
+                >
                   <FiInstagram size={20} />
                 </a>
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-accent transition-colors">
+                <a
+                  href="https://facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-600 hover:text-accent transition-colors"
+                >
                   <FiFacebook size={20} />
                 </a>
               </div>
