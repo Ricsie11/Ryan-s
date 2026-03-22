@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiMenu, FiX, FiInstagram, FiFacebook } from "react-icons/fi";
-import logo from "../assets/logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,7 +34,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center space-x-3">
             <img
-              src={logo}
+              src="/logo.png"
               alt="StylesByRyan Logo"
               className="h-10 w-10 object-contain rounded"
             />
