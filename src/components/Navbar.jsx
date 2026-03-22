@@ -92,8 +92,12 @@ const Navbar = () => {
                 </Link>
               ))}
               <div className="pt-4 flex justify-around">
-                <FiInstagram size={20} className="text-gray-600 hover:text-accent cursor-pointer" />
-                <FiFacebook size={20} className="text-gray-600 hover:text-accent cursor-pointer" />
+                <a href="https://www.instagram.com/_styledbyryan" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-accent transition-colors">
+                  <FiInstagram size={20} />
+                </a>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-accent transition-colors">
+                  <FiFacebook size={20} />
+                </a>
               </div>
             </div>
           </motion.div>
